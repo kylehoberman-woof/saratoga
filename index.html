@@ -258,6 +258,56 @@
     margin: 40px 0;
   }
 
+  /* Roster */
+  .roster-section {
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .roster-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .roster-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .roster-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .roster-badge {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 100px;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .roster-count {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
   /* Footer */
   footer {
     text-align: center;
@@ -292,8 +342,8 @@
 </div>
 
 <div class="status-bar">
-  <div class="status-item"><span class="status-dot" style="background:var(--green)"></span> 2 confirmed</div>
-  <div class="status-item"><span class="status-dot" style="background:#D85A30"></span> 3 need booking</div>
+  <div class="status-item"><span class="status-dot" style="background:var(--green)"></span> 5 confirmed</div>
+  <div class="status-item"><span class="status-dot" style="background:#D85A30"></span> 1 needs booking</div>
   <div class="status-item"><span class="status-dot" style="background:var(--purple)"></span> 1 punishment event</div>
 </div>
 
@@ -306,6 +356,23 @@
 </div>
 
 <div class="container">
+
+  <!-- ROSTER -->
+  <div class="roster-section">
+    <div class="roster-heading">The Crew — 10 Attending</div>
+    <div class="roster-grid">
+      <div class="roster-card"><span class="roster-name">Adam</span></div>
+      <div class="roster-card"><span class="roster-name">Kyle</span><span class="roster-badge">🏆 FF</span></div>
+      <div class="roster-card"><span class="roster-name">Brisket</span></div>
+      <div class="roster-card"><span class="roster-name">Berman</span></div>
+      <div class="roster-card"><span class="roster-name">Dean</span></div>
+      <div class="roster-card"><span class="roster-name">Greg</span><span class="roster-badge">🏆 FF</span></div>
+      <div class="roster-card"><span class="roster-name">Jake</span></div>
+      <div class="roster-card"><span class="roster-name">Jon</span><span class="roster-badge">🏆 FF</span></div>
+      <div class="roster-card"><span class="roster-name">Scott</span></div>
+      <div class="roster-card"><span class="roster-name">Jonah</span></div>
+    </div>
+  </div>
 
   <!-- THURSDAY -->
   <div class="day-section">
@@ -387,14 +454,14 @@
     </div>
     <div class="event-stack">
 
-      <div class="event" data-status="todo">
-        <div class="card">
-          <div class="card-time">7:30 AM</div>
+      <div class="event" data-status="confirmed">
+        <div class="card confirmed">
+          <div class="card-time">6:50 AM</div>
           <div class="card-title">Golf — Saratoga Spa Golf Course <span class="card-rating">★ 4.4</span></div>
-          <div class="card-desc">60 Roosevelt Dr, inside Saratoga Spa State Park. NYS-run public course — lush fairways, fast elevated greens, GPS carts. Best value in the area. Book at nystateoutdoors.com or call (518) 584-2006.</div>
+          <div class="card-desc">60 Roosevelt Dr, inside Saratoga Spa State Park. NYS-run public course — lush fairways, fast elevated greens, GPS carts. Best value in the area.</div>
           <div class="card-tags">
             <span class="tag" style="background:var(--green-light);color:var(--green)">Golf</span>
-            <span class="tag" style="background:#FAECE7;color:#993C1D">Book tee time</span>
+            <span class="tag" style="background:var(--green-light);color:var(--green)">✓ Booked · 6:50 AM</span>
           </div>
         </div>
       </div>
@@ -438,25 +505,26 @@
     </div>
     <div class="event-stack">
 
-      <div class="event" data-status="todo">
-        <div class="card">
+      <div class="event" data-status="confirmed">
+        <div class="card confirmed">
           <div class="card-time">10:00 AM</div>
           <div class="card-title">Brunch — Hattie's <span class="card-rating">★ 4.4</span></div>
           <div class="card-desc">45 Phila St. Classic Southern joint — legendary fried chicken, shrimp & grits. Saturday brunch 10 AM–2 PM. Perfect fuel before the track.</div>
           <div class="card-tags">
             <span class="tag" style="background:var(--blue-light);color:var(--blue)">Brunch</span>
-            <span class="tag" style="background:#FAECE7;color:#993C1D">Book now</span>
+            <span class="tag" style="background:var(--green-light);color:var(--green)">✓ Booked</span>
           </div>
         </div>
       </div>
 
-      <div class="event" data-status="none">
-        <div class="card">
+      <div class="event" data-status="confirmed">
+        <div class="card confirmed">
           <div class="card-time">12:30 PM</div>
           <div class="card-title">Saratoga Race Course <span class="card-rating">★ 4.6</span></div>
           <div class="card-desc">267 Union Ave. Oldest sporting venue in the US (est. 1863). General admission $11. First post ~1 PM. Collared shirts required in certain sections. Up to 12 races — plan for the full afternoon.</div>
           <div class="card-tags">
             <span class="tag" style="background:var(--amber-light);color:var(--amber)">Horse Racing</span>
+            <span class="tag" style="background:var(--green-light);color:var(--green)">✓ Booked</span>
           </div>
         </div>
       </div>
